@@ -50,11 +50,7 @@ def handle_message(event):
         reply_message = "❗請善用搜尋❗\n記事本、相簿、聊天室皆可查詢。"
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
 
-    if "哪個" in user_message:
-        reply_message = "❗請善用搜尋❗\n記事本、相簿、聊天室皆可查詢。"
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
-    
-    if "哪一個" in user_message:
+    if "哪" in user_message:
         reply_message = "❗請善用搜尋❗\n記事本、相簿、聊天室皆可查詢。"
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
 
