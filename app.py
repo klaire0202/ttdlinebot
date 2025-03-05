@@ -51,7 +51,7 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
 
     if "移動攻擊" in user_message:
-        reply_message = "使用【移動攻擊】技能/n⚠️舉球員和攻擊手都需要有這個技能⚠️/n→  攻擊手在網子前橫向奔跑時，舉球員會多一個「移動攻擊」可以選。/n▶️舉球員在後排，會這招的攻擊手在前排更容易觸發/n✅川渡瞬己：直接開大招即可/n✅舉球員：目前大部分S都能舉移動攻擊/n❌岩泉/田中/女川/緣下沒有這個技能。"
+        reply_message = "使用【移動攻擊】技能\n⚠️舉球員和攻擊手都需要有這個技能⚠️\n→  攻擊手在網子前橫向奔跑時，舉球員會多一個「移動攻擊」可以選。\n▶️舉球員在後排，會這招的攻擊手在前排更容易觸發\n✅川渡瞬己：直接開大招即可\n✅舉球員：目前大部分S都能舉移動攻擊\n❌岩泉/田中/女川/緣下沒有這個技能。"
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
 
     if "問" in user_message:
