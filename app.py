@@ -43,7 +43,15 @@ def handle_member_join(event):
 def handle_message(event):
     user_message = event.message.text
     if "增益" in user_message:
-        reply_message = "❗請善用搜尋❗\n記事本、相簿、聊天室皆可查詢。"
+        reply_message = "配置【增益等級】的選手 → 把白卡納入上場隊伍裡。"
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
+
+    if "出界" in user_message:
+        reply_message = "使用【出界】技能 → 球靠近邊線會出現判斷出界選項。"
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
+
+    if "移動攻擊" in user_message:
+        reply_message = "使用【移動攻擊】技能/n⚠️舉球員和攻擊手都需要有這個技能⚠️/n→  攻擊手在網子前橫向奔跑時，舉球員會多一個「移動攻擊」可以選。/n▶️舉球員在後排，會這招的攻擊手在前排更容易觸發/n✅川渡瞬己：直接開大招即可/n✅舉球員：目前大部分S都能舉移動攻擊/n❌岩泉/田中/女川/緣下沒有這個技能。"
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
 
     if "問" in user_message:
