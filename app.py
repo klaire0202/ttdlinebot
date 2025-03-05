@@ -43,39 +43,39 @@ def handle_member_join(event):
 def handle_message(event):
     user_message = event.message.text
     if "增益" in user_message:
-        reply_message = "請善用搜尋\n記事本、相簿、聊天室皆可查詢。"
+        reply_message = "❗請善用搜尋❗\n記事本、相簿、聊天室皆可查詢。"
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
 
     if "問" in user_message:
-        reply_message = "請善用搜尋\n記事本、相簿、聊天室皆可查詢。"
+        reply_message = "❗請善用搜尋❗\n記事本、相簿、聊天室皆可查詢。"
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
 
     if "哪個" in user_message:
-        reply_message = "請善用搜尋\n記事本、相簿、聊天室皆可查詢。"
+        reply_message = "❗請善用搜尋❗\n記事本、相簿、聊天室皆可查詢。"
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
     
     if "哪一個" in user_message:
-        reply_message = "請善用搜尋\n記事本、相簿、聊天室皆可查詢。"
+        reply_message = "❗請善用搜尋❗\n記事本、相簿、聊天室皆可查詢。"
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
 
     if "抽光還是存起來" in user_message:
-        reply_message = "請善用搜尋\n記事本、相簿、聊天室皆可查詢。"
+        reply_message = "❗請善用搜尋❗\n記事本、相簿、聊天室皆可查詢。"
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
 
     if "存起來還是抽光" in user_message:
-        reply_message = "請善用搜尋\n記事本、相簿、聊天室皆可查詢。"
+        reply_message = "❗請善用搜尋❗\n記事本、相簿、聊天室皆可查詢。"
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
 
     if "主線還是活動" in user_message:
-        reply_message = "請善用搜尋\n記事本、相簿、聊天室皆可查詢。"
+        reply_message = "❗請善用搜尋❗\n記事本、相簿、聊天室皆可查詢。"
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
 
     if "活動還是推主線" in user_message:
-        reply_message = "請善用搜尋\n記事本、相簿、聊天室皆可查詢。"
+        reply_message = "❗請善用搜尋❗\n記事本、相簿、聊天室皆可查詢。"
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
 
     if "活動還是主線" in user_message:
-        reply_message = "請善用搜尋\n記事本、相簿、聊天室皆可查詢。"
+        reply_message = "❗請善用搜尋❗\n記事本、相簿、聊天室皆可查詢。"
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
 
 if __name__ == "__main__":
