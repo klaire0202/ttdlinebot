@@ -55,7 +55,7 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
 
     if "二次攻擊" in user_message:
-        reply_message = "使用【二次攻擊】技能 → 不要放舉球員在隊伍裡\n"
+        reply_message = "使用【二次攻擊】技能 → 不要放舉球員在隊伍裡"
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
 
     if "加起來" in user_message:
