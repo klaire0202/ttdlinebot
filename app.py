@@ -58,35 +58,23 @@ def handle_message(event):
         reply_message = "配置【N名A高中,B高中選手】→ 隊伍12人裡，至少有要N名A+B的選手。"
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
 
+    if "粉絲" in user_message:
+        reply_message = "選手在提升能力可以做升等\n在左側粉絲俱樂部可以抽綠角、換綠角、換石頭\n\n能力影響：\n扣球⮕影響扣球\n發球⮕影響發球\n頭腦⮕影響發球、二次進攻\n傳球⮕影響傳球、二次進攻\n攔網、彈跳⮕影響攔網\n接球、速度⮕影響接球\n幸運⮕影響扣球、發球成功率\n           幸運值基本上升到101就不會打出界了\n精神⮕增加/减少buff造成的影響\n"
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
+
     if "課金" in user_message or "微課" in user_message or "儲值" in user_message:
         reply_message = "課金推薦套組\n✅每日禮包 $90\n✅通行證 $190\n✅月卡 $220\n28天總花費$2930"
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
 
-    if "抽光還是存起來" in user_message:
+    if "抽光還是存起來" in user_message or "存起來還是抽光" in user_message:
         reply_message = "存 除非你是課佬\n❗請善用搜尋❗\n記事本、相簿、聊天室皆可查詢。"
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
 
-    if "存起來還是抽光" in user_message:
-        reply_message = "存 除非你是課佬\n❗請善用搜尋❗\n記事本、相簿、聊天室皆可查詢。"
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
-
-    if "主線還是活動" in user_message:
+    if "主線還是活動" in user_message or "活動還是推主線" in user_message or "活動還是主線" in user_message:
         reply_message = "❗請善用搜尋❗\n記事本、相簿、聊天室皆可查詢。"
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
 
-    if "活動還是推主線" in user_message:
-        reply_message = "❗請善用搜尋❗\n記事本、相簿、聊天室皆可查詢。"
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
-
-    if "活動還是主線" in user_message:
-        reply_message = "❗請善用搜尋❗\n記事本、相簿、聊天室皆可查詢。"
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
-
-    if "問" in user_message:
-        reply_message = "❗請善用搜尋❗\n記事本、相簿、聊天室皆可查詢。"
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
-
-    if "哪" in user_message:
+    if "問" in user_message or "哪" in user_message:
         reply_message = "❗請善用搜尋❗\n記事本、相簿、聊天室皆可查詢。"
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
 
