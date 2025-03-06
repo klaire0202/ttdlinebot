@@ -58,12 +58,8 @@ def handle_message(event):
         reply_message = "配置【N名A高中,B高中選手】→ 隊伍12人裡，至少有要N名A+B的選手。"
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
 
-    if "問" in user_message:
-        reply_message = "❗請善用搜尋❗\n記事本、相簿、聊天室皆可查詢。"
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
-
-    if "哪" in user_message:
-        reply_message = "❗請善用搜尋❗\n記事本、相簿、聊天室皆可查詢。"
+    if "課金" in user_message or "微課" in user_message or "儲值" in user_message:
+        reply_message = "課金推薦套組\n✅每日禮包 $90\n✅通行證 $190\n✅月卡 $220\n28天總花費$2930"
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
 
     if "抽光還是存起來" in user_message:
@@ -83,6 +79,14 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
 
     if "活動還是主線" in user_message:
+        reply_message = "❗請善用搜尋❗\n記事本、相簿、聊天室皆可查詢。"
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
+
+    if "問" in user_message:
+        reply_message = "❗請善用搜尋❗\n記事本、相簿、聊天室皆可查詢。"
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
+
+    if "哪" in user_message:
         reply_message = "❗請善用搜尋❗\n記事本、相簿、聊天室皆可查詢。"
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
 
