@@ -29,7 +29,7 @@ def callback():
 
     return "OK", 200
 
-# 歡迎新成員
+# 
 @line_handler.add(MemberJoinedEvent)
 def handle_member_join(event):
     new_member_id = event.joined.members[0].user_id
@@ -37,7 +37,7 @@ def handle_member_join(event):
     
     line_bot_api.reply_message(event.reply_token, TextSendMessage(text=welcome_message))
 
-# 偵測關鍵字並回覆
+# 
 @line_handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     user_message = event.message.text
