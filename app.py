@@ -67,7 +67,7 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
 
     if "抽光還是存起來" in user_message or "存起來還是抽光" in user_message or "存還是" in user_message or "抽還是" in user_message:
-        reply_message = "粉絲幣：\n看個人喜歡，覺得運氣不好的人可以用換得，覺得運氣好就抽\n\n普彩角池：\n存 除非你是課佬或是對他有真愛 非要不可\n"
+        reply_message = "粉絲幣：\n看個人喜歡，覺得運氣不好的人可以用換得，覺得運氣好就抽\n\n普彩角池：\n存 除非你是課佬或是對他有真愛 非要不可"
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
 
     if "主線還是活動" in user_message or "活動還是推主線" in user_message or "活動還是主線" in user_message:
