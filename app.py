@@ -59,7 +59,7 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
 
     if "加起來" in user_message:
-        reply_message = "配置【N名A高中,B高中選手】→ 隊伍12人裡，至少有要N名A+B的選手。"
+        reply_message = "配置【N名A高中,B高中選手】→ 隊伍12人裡，至少要有N名A+B的選手。"
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
 
     if "粉絲" in user_message:
