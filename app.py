@@ -59,15 +59,15 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
 
     if "粉絲" in user_message:
-        reply_message = "粉絲幣可以從比賽中取得\n選手在提升能力可以做升等\n\n在左側粉絲俱樂部可以抽綠角、換綠角、石頭...\n\n能力影響：\n扣球⮕影響扣球\n發球⮕影響發球\n智力⮕影響發球、二次進攻\n拋球⮕影響托球、二次進攻\n攔網、彈力⮕影響攔網\n接球、速度⮕影響接球\n運氣⮕影響扣球、發球成功率\n           基本上升到101就不會打出界了\n精神⮕增加/减少buff造成的影響"
+        reply_message = "粉絲幣可以從比賽中取得\n隊伍裡有綠角可以提升拿粉絲幣喔！\n升綠角等級、星等強度、上場多隻綠角也都可以獲得更多粉絲幣\n選手在提升能力可以做升等\n綠角約等於普彩角\n在左側粉絲俱樂部可以抽綠角、換綠角、石頭...\n\n能力影響：\n扣球⮕影響扣球\n發球⮕影響發球\n智力⮕影響發球、二次進攻\n拋球⮕影響托球、二次進攻\n攔網、彈力⮕影響攔網\n接球、速度⮕影響接球\n運氣⮕影響扣球、發球成功率\n           基本上升到101就不會打出界了\n精神⮕增加/减少buff造成的影響"
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
 
     if "課金" in user_message or "微課" in user_message or "儲值" in user_message:
         reply_message = "課金推薦套組\n✅每日禮包 $90\n✅通行證 $190\n✅月卡 $220\n28天總花費$2930"
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
 
-    if "抽光還是存起來" in user_message or "存起來還是抽光" in user_message:
-        reply_message = "存 除非你是課佬\n❗請善用搜尋❗\n記事本、相簿、聊天室皆可查詢。"
+    if "抽光還是存起來" in user_message or "存起來還是抽光" in user_message or "存還是" in user_message or "抽還是" in user_message:
+        reply_message = "粉絲幣：\n看個人喜歡，覺得運氣不好的人可以用換得，覺得運氣好就抽\n普彩角池：\n存 除非你是課佬或是對他有真愛 非要不可\n"
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
 
     if "主線還是活動" in user_message or "活動還是推主線" in user_message or "活動還是主線" in user_message:
