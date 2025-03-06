@@ -78,7 +78,7 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
 
     if "主線還是活動" in user_message or "活動還是推主線" in user_message or "活動還是主線" in user_message:
-        reply_message = "❗請善用搜尋❗\n記事本、相簿、聊天室皆可查詢。"
+        reply_message = "小幫手建議每日主線十場，然後就努力去拿西谷！"
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
 
     if "問" in user_message or "哪" in user_message:
