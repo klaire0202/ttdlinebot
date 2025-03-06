@@ -7,7 +7,6 @@ import os
 
 app = Flask(__name__)
 
-# 從環境變數讀取 Token 和 Secret
 LINE_CHANNEL_ACCESS_TOKEN = os.getenv("LINE_CHANNEL_ACCESS_TOKEN")
 LINE_CHANNEL_SECRET = os.getenv("LINE_CHANNEL_SECRET")
 
@@ -30,7 +29,7 @@ def callback():
 
     return "OK", 200
 
-# 🔹 功能 1：歡迎新成員並 @tag
+# 歡迎新成員
 @line_handler.add(MemberJoinedEvent)
 def handle_member_join(event):
     new_member_id = event.joined.members[0].user_id
@@ -38,7 +37,7 @@ def handle_member_join(event):
     
     line_bot_api.reply_message(event.reply_token, TextSendMessage(text=welcome_message))
 
-# 🔹 功能 2：偵測關鍵字「請問」並回覆
+# 偵測關鍵字並回覆
 @line_handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     user_message = event.message.text
