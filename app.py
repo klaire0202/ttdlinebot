@@ -81,9 +81,9 @@ def handle_message(event):
         reply_message = "小幫手建議每日主線十場，然後就努力去拿西谷！"
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
 
-    if "問" in user_message or "哪" in user_message:
+    '''if "問" in user_message or "哪" in user_message:
         reply_message = "❗請善用搜尋❗\n記事本、相簿、聊天室皆可查詢。"
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))'''
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)), debug=False)
