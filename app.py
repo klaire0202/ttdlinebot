@@ -54,7 +54,7 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
 
     if "二次攻擊" in user_message:
-        reply_message = "使用【二次攻擊】技能 → 不要放舉球員在隊伍裡"
+        reply_message = "觸發【二次攻擊】技能解任務 → 建議不要放舉球員在隊伍裡\n若真的想放❗️放前排❗️然後接球要高才有機會觸發二次攻擊"
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
 
     if "主力" in user_message:
