@@ -74,7 +74,7 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
 
     if "商店" in user_message:
-        reply_message = "❗️體力、彩石必買❗️\n\n🔹商店：萬能技能卡、牛奶（牛奶、彩萬能技能卡，有錢可以買）\n🔹TV商店：選手、現場幣（應援棒夠多）\n🔹️錦標賽商店：體力、彩石\n🔹️PVP商店：體力、彩石\n🔹️DM夢幻比賽商店：萬能技能卡、彩石（牛奶隨意）\n🔹️扭蛋點數商店：偶像級選手選擇劵\n🔹️粉絲圈商店：綠卡！\n🔹️社團商店：技能萬能卡、彩石（妞妞隨意）\n🔹活動商店：翼、彩石必買（未來會有家具、萬能技能卡也可以買）"
+        reply_message = "❗️體力、彩石必買❗️\n\n🔹商店：萬能技能卡、牛奶（牛奶、彩萬能技能卡，有錢可以買）\n🔹TV商店：選手、現場幣（應援棒夠多）\n🔹️錦標賽商店：體力、彩石\n🔹️PVP商店：體力、彩石\n🔹️DM夢幻比賽商店：萬能技能卡、彩石（牛奶隨意）\n🔹️扭蛋點數商店：偶像級選手選擇劵\n🔹️粉絲圈商店：綠卡！\n🔹️社團商店：技能萬能卡、彩石（牛奶隨意）\n🔹活動商店：翼、彩石必買（未來會有家具、萬能技能卡也可以買）"
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
 
     if "課金" in user_message or "微課" in user_message or "儲值" in user_message or "禮包" in user_message:
