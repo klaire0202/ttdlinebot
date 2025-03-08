@@ -42,7 +42,7 @@ def handle_member_join(event):
 def handle_message(event):
     user_message = event.message.text
     if "增益" in user_message:
-        reply_message = "配置【增益等級】的選手 → 把白卡納入上場隊伍裡，上場或候補都可以。\n❗️教練不算在內❗️"
+        reply_message = "配置【增益等級】的選手 → 把「白卡」納入上場隊伍裡，上場或候補都可以。\n❗️教練不算在內❗️"
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
 
     if "出界" in user_message:
