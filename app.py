@@ -85,8 +85,8 @@ def handle_message(event):
         reply_message = "小幫手建議\n粉絲幣：\n看個人喜歡，覺得運氣不好的人可以用換得，覺得運氣好就抽\n\n普彩角池：\n存 除非你是課佬或是對他有真愛 非要不可"
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
 
-    if "主線還是活動" in user_message or "活動還是推主線" in user_message or "活動還是主線" in user_message:
-        reply_message = "小幫手建議每日主線十場，然後就努力去拿西谷！"
+    if "主線還是活動" in user_message or "活動還是推主線" in user_message or "活動還是主線" in user_message or "活動還是劇情" in user_message or "還是劇情" in user_message or "還是活動" in user_message or "還是主線" in user_message or "活動還是" in user_message or "主線還是" in user_message or "劇情還是" in user_message:
+        reply_message = "小幫手建議每日主線十場，然後就努力去拿西谷！之後就是看個人要把西谷衝到三星或是打主線"
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
 
     '''if "問" in user_message or "哪" in user_message:
