@@ -62,7 +62,7 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
 
     if "隊伍製作" in user_message:
-        reply_message = "點選主頁左側欄位的隊伍管理，再點選排名★獎勵，請達到60顆★才能過新手任務呦"
+        reply_message = "點選主頁左側欄位的隊伍管理，再點選排名★獎勵，總星數請達到60顆★才能過新手任務呦"
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
 
     if "加起來" in user_message:
