@@ -78,7 +78,7 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
 
     if "第一個異裝" in user_message or "第一個制服" in user_message or "下一個制服" in user_message or "下一個異裝" in user_message:
-        reply_message = "第一個異裝是「制服」\n制服分別有「日向、影山、研磨、黑尾、青根、二口、黃金川」\n\n第二異裝主題是掃除\n分別有「免費送的旭、大地、菅原、及川、岩泉」"
+        reply_message = "第一個異裝是「制服」\n分別有「日向、影山、研磨、黑尾、青根、二口、黃金川」\n\n第二異裝主題是「掃除」\n分別有「免費送的旭、大地、菅原、及川、岩泉」"
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
 
     if "課金" in user_message or "微課" in user_message or "儲值" in user_message or "禮包" in user_message:
