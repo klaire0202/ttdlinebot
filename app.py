@@ -85,7 +85,7 @@ def handle_message(event):
         reply_message = "課金推薦套組\n✅每日禮包 $90\n✅通行證 $190\n✅月卡 $220\n28天總花費$2930"
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))'''
 
-    if "升哪個技能" in user_message or "升什麼技能" in user_message or "升技能" in user_message:
+    if "升哪個技能" in user_message or "升什麼技能" in user_message or "升技能" in user_message or "技能升" in user_message:
         reply_message = "小幫手建議 升技能：\n🔹️銅卡：被動>托球>接球\n🔹️銀卡：看各個角色需求\n🔹️金卡：扣球攻擊(斜線、直線、吊球、擋出界)、托球\n🔹️彩卡：buff、彩扣"
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
 
