@@ -94,7 +94,7 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
 
     if "主線還是活動" in user_message or "活動還是推主線" in user_message or "活動還是主線" in user_message or "活動還是劇情" in user_message or "還是劇情" in user_message or "還是活動" in user_message or "還是主線" in user_message or "活動還是" in user_message or "主線還是" in user_message or "劇情還是" in user_message:
-        reply_message = "小幫手建議每日主線十場，然後就努力去拿西谷！之後就是看個人要把西谷衝到三星或是打主線"
+        reply_message = "小幫手建議每日主線十場，然後就努力去拿西谷！\n之後就是看個人要把西谷衝到三星或是打主線\n如果西谷、彩石都換完，建議去過劇情關卡，慢慢集自由人含碎片，讓下期可以直接換出金卡🥳或是刷裝備、技能關卡"
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
 
     '''if "問" in user_message or "哪" in user_message:
