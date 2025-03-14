@@ -30,7 +30,7 @@ def callback():
     return "OK", 200
 
 # 
-@line_handler.add(MemberJoinedEvent)
+'''@line_handler.add(MemberJoinedEvent)
 def handle_member_join(event):
     new_member_id = event.joined.members[0].user_id
     welcome_message = f"新成員你好，進來請先看記事本的群規。\n也可以看看記事本與相簿裡的攻略熟悉一下。\n若已有帳號，請將遊戲名片放入相簿裡。"
@@ -40,7 +40,22 @@ def handle_member_join(event):
 #
 @handler.add(MessageEvent, message=StickerMessage)
 def handle_sticker(event):
-    pass
+    pass'''
+
+# 修正：移除 user_id，直接發送訊息
+@line_handler.add(MemberJoinedEvent)
+def handle_member_join(event):
+    welcome_message = (
+        "新成員你好，進來請先看記事本的群規。\n"
+        "也可以看看記事本與相簿裡的攻略熟悉一下。\n"
+        "若已有帳號，請將遊戲名片放入相簿裡。"
+    )
+    line_bot_api.reply_message(event.reply_token, TextSendMessage(text=welcome_message))
+
+# 修正：確保使用 `line_handler.add()`
+@line_handler.add(MessageEvent, message=StickerMessage)
+def handle_sticker(event):
+    pass  # 忽略所有貼圖
 
 # 
 @line_handler.add(MessageEvent, message=TextMessage)
