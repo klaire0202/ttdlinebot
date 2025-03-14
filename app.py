@@ -40,14 +40,13 @@ def handle_member_join(event):
 # 
 @line_handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    
+    user_message = event.message.text
     if "dc" in user_message or "Dc" in user_message or "DC" in user_message or "dC" in user_message:
         pass
     elif "7777" in user_message or "吸" in user_message or "c" in user_message or "C" in user_message:
         reply_message = "小幫手眼紅中 別再曬了🥹"
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
-
-    user_message = event.message.text
+        
     elif "增益" in user_message:
         reply_message = "配置【增益等級】的選手\n → 把「白卡」納入上場隊伍裡，上場或候補都可以。\n❗️教練不算在內❗️"
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
