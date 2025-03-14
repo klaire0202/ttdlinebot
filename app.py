@@ -45,6 +45,10 @@ def handle_message(event):
         reply_message = "配置【增益等級】的選手\n → 把「白卡」納入上場隊伍裡，上場或候補都可以。\n❗️教練不算在內❗️"
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
 
+    if "7777" in user_message or "吸" in user_message or "c" in user_message or "C" in user_message:
+        reply_message = "小幫手眼紅中 別再曬了🥹"
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
+
     if "出界" in user_message:
         reply_message = "使用【出界】技能 → 球靠近邊線會出現判斷出界選項。"
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
