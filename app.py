@@ -40,10 +40,10 @@ def handle_member_join(event):
 # 
 @line_handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    user_message = event.message.text.lower()  # 將輸入轉小寫，減少大小寫判斷
+    user_message = event.message.text.lower()
 
     responses = {
-        ("dc",): None,  # 這裡是略過的條件
+        ("dc",): None,
         ("7777", "吸", "c"): "小幫手眼紅中 別再曬了🥹",
         ("增益",): "配置【增益等級】的選手\n → 把「白卡」納入上場隊伍裡，上場或候補都可以。\n❗️教練不算在內❗️",
         ("出界",): "使用【出界】技能 → 球靠近邊線會出現判斷出界選項。",
@@ -62,9 +62,9 @@ def handle_message(event):
 
     for keywords, reply_message in responses.items():
         if any(keyword in user_message for keyword in keywords):
-            if reply_message:  # 避免回應 None
+            if reply_message:
                 line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
-            return  # 確保只發送一次回應，不重複觸發多個訊息
+            return
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)), debug=False)
