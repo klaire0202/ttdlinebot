@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
-from linebot.models import MessageEvent, TextMessage, TextSendMessage, JoinEvent, MemberJoinedEvent
+from linebot.models import MessageEvent, TextMessage, TextSendMessage, JoinEvent, MemberJoinedEvent, StickerMessage
 
 import os
 
@@ -38,9 +38,9 @@ def handle_member_join(event):
     line_bot_api.reply_message(event.reply_token, TextSendMessage(text=welcome_message))
 
 #
-'''@handler.add(MessageEvent, message=StickerMessage)
+@line_handler.add(MessageEvent, message=StickerMessage)
 def handle_sticker(event):
-    pass'''
+    pass
 
 # 
 @line_handler.add(MessageEvent, message=TextMessage)
