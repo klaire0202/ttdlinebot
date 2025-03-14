@@ -1,9 +1,9 @@
-import os
-import re
 from flask import Flask, request, jsonify
 from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
 from linebot.models import MessageEvent, TextMessage, TextSendMessage, JoinEvent, MemberJoinedEvent, StickerMessage
+
+import os
 
 app = Flask(__name__)
 
@@ -29,6 +29,7 @@ def callback():
 
     return "OK", 200
 
+# 
 @line_handler.add(MemberJoinedEvent)
 def handle_member_join(event):
     new_member_id = event.joined.members[0].user_id
@@ -36,18 +37,20 @@ def handle_member_join(event):
     
     line_bot_api.reply_message(event.reply_token, TextSendMessage(text=welcome_message))
 
+#
 @line_handler.add(MessageEvent, message=StickerMessage)
 def handle_sticker(event):
     pass
 
+# 
 @line_handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    user_message = event.message.text.lower()
-    
-    message_without_parentheses = re.sub(r'\([^\)]+\)', '', user_message)
-    cleaned_message = message_without_parentheses.strip()
 
-    # 定義回應內容
+    if event.message.emojis:
+        return
+    
+    user_message = event.message.text.lower()
+
     responses = {
         ("dc",): None,
         ("7777", "吸", "c"): "小幫手眼紅中 別再曬了🥹",
@@ -65,11 +68,7 @@ def handle_message(event):
         ("抽光還是存起來", "存起來還是抽光", "存還是", "抽還是", "抽嗎", "還是抽", "還是存", "存翅膀", "存翼"): "小幫手建議\n粉絲幣：\n看個人喜歡，覺得運氣不好的人可以用換得，覺得運氣好就抽\n\n普彩角池：\n存 除非你是課佬或是對他有真愛 非要不可",
         ("主線還是活動", "活動還是推主線", "活動還是主線", "活動還是劇情", "還是劇情", "還是活動", "還是主線", "活動還是", "主線還是", "劇情還是"): "小幫手建議每日主線十場，然後就努力去拿西谷！\n之後就是看個人要把西谷衝到三星或是打主線\n\n如果西谷、彩石都換完，建議去過劇情關卡，慢慢集自由人，讓下期出來時，就可以直接換金卡🥳或是刷裝備、技能關卡",
     }
-    
-    if cleaned_message == "":
-        return
 
-    # 遍歷設定的關鍵字，檢查是否有符合的回應
     for keywords, reply_message in responses.items():
         if any(keyword in user_message for keyword in keywords):
             if reply_message:
