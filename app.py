@@ -47,7 +47,8 @@ def handle_sticker(event):
 def handle_message(event):
 
     if event.message.emojis:
-        return  # 不回覆表情貼
+        return
+    
     user_message = event.message.text.lower()
 
     responses = {
