@@ -47,7 +47,6 @@ def handle_message(event):
     message_without_parentheses = re.sub(r'\([^\)]+\)', '', user_message)
     cleaned_message = message_without_parentheses.strip()
 
-    # 定義回應內容
     responses = {
         ("dc",): None,
         ("7777", "吸", "c"): "小幫手眼紅中 別再曬了🥹",
@@ -69,7 +68,6 @@ def handle_message(event):
     if cleaned_message == "":
         return
 
-    # 遍歷設定的關鍵字，檢查是否有符合的回應
     for keywords, reply_message in responses.items():
         if any(keyword in cleaned_message for keyword in keywords):
             if reply_message:
