@@ -48,7 +48,7 @@ def handle_message(event):
     cleaned_message = message_without_parentheses.strip()
 
     responses = {
-        ("dc","chatgpt","facebook","touch"): None,
+        ("dc","chatgpt","facebook","touch","gamerch",".com"): None,
         ("7777", "吸", "c"): "小幫手眼紅中 別再曬了🥹",
         ("綠角",): "綠角建議都抽都買！不用問先抽/換誰，都要！",
         ("增益",): "配置【增益等級】的選手\n → 把「白卡」納入上場隊伍裡，上場或候補都可以。\n❗️教練不算在內❗️",
