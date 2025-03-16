@@ -32,7 +32,7 @@ def callback():
 @line_handler.add(MemberJoinedEvent)
 def handle_member_join(event):
     new_member_id = event.joined.members[0].user_id
-    welcome_message = f"新成員你好，進來請先看記事本的群規。\n也可以看看記事本與相簿裡的攻略熟悉一下。\n若已有帳號，請將遊戲名片放入相簿裡。"
+    welcome_message = f"新成員你好，請先看記事本的群規。\n\n也可以看看記事本與相簿裡的攻略。\n\n❗️請將遊戲名片放入相簿裡❗️\n若無放置名片，在清人時間時，便會踢出群組呦。\n🫶🏻謝謝配合🫶🏻"
     
     line_bot_api.reply_message(event.reply_token, TextSendMessage(text=welcome_message))
 
