@@ -48,7 +48,7 @@ def handle_message(event):
     cleaned_message = message_without_parentheses.strip()
 
     responses = {
-        ("dc","chatgpt","facebook","touch","gamerch",".com","2930","cd","npc","cpu","cp","ic"): None,
+        ("dc","chatgpt","facebook","touch","gamerch",".com","2930","cd","npc","cpu","cp","ic","打手出界","擋出界"): None,
         ("7777", "吸", "c"): "小幫手眼紅中 別再曬了🥹",
         ("29",): "旭：你禮貌嗎？我31！",
         ("綠角",): "綠角建議都抽都買！不用問先抽/換誰，都要！",
