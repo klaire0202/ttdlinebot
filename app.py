@@ -47,8 +47,8 @@ def handle_message(event):
     # 取得群組 ID
     if event.source.type == "group":
         group_id = event.source.group_id
-        if user_message == "群組id":
-            line_bot_api.reply_message(event.reply_token, TextSendMessage(text=f"這個群組的 ID 是：\n{group_id}"))
+        if user_message == "可以去臉書查查Haikyu Touch The Dream SEA官網這個":
+            line_bot_api.reply_message(event.reply_token, TextSendMessage(text=f"小幫手在測試\n{group_id}"))
             return
 
 '''@line_handler.add(MessageEvent, message=TextMessage)
