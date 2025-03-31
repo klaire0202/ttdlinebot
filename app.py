@@ -44,6 +44,17 @@ def handle_sticker(event):
 def handle_message(event):
     user_message = event.message.text.lower()
     
+    # 取得群組 ID
+    if event.source.type == "group":
+        group_id = event.source.group_id
+        if user_message == "群組id":
+            line_bot_api.reply_message(event.reply_token, TextSendMessage(text=f"這個群組的 ID 是：\n{group_id}"))
+            return
+
+'''@line_handler.add(MessageEvent, message=TextMessage)
+def handle_message(event):
+    user_message = event.message.text.lower()
+    
     message_without_parentheses = re.sub(r'\([^\)]+\)', '', user_message)
     cleaned_message = message_without_parentheses.strip()
 
@@ -80,7 +91,7 @@ def handle_message(event):
         if any(keyword in cleaned_message for keyword in keywords):
             if reply_message:
                 line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
-            return
+            return'''
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)), debug=False)
